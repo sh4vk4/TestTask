@@ -1,0 +1,236 @@
+.font-xs {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.font-s {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.font-m {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.font-l {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.right {
+    align-items: flex-end;
+}
+
+.center {
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+a.selected {
+    border-bottom: 1px solid #4094F7 !important;
+    cursor: default;
+    font-weight: 600 !important;
+}
+
+.button {
+    background-color: #4094F7;
+    color: #FFF;
+    padding: 4.3243243243px 8px;
+    border-radius: 4px;
+    cursor: pointer !important;
+}
+
+hr {
+    height: 2px;
+    position: relative;
+    background-color: #D7EDFF;
+    border: none;
+}
+
+    hr::before {
+        position: absolute;
+        content: "";
+        width: 20%;
+        height: 2px;
+        border: 2px solid #4094F7;
+        z-index: 10;
+    }
+
+.popup {
+    width: 220px;
+    opacity: 0;
+    left: -5px;
+    bottom: 28px;
+    position: absolute;
+    background-color: #303940;
+    color: #F6F8F9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(91, 104, 113, 0.25);
+    transition: 0.2s ease;
+}
+
+    .popup::before {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: #303940;
+        bottom: -5px;
+        transform: rotate(45deg);
+    }
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(26, 32, 36, 0.2) !important;
+    border-radius: 2px !important;
+}
+
+* {
+    font-family: "Inter", sans-serif !important;
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    color: #252C32;
+}
+
+
+body {
+    background: #FFF;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    background-color: #FFF;
+    border: 1px solid #DDE2E4;
+    border-radius: 6px;
+    padding: 8px;
+    font-family: "Inter", sans-serif !important;
+    color: #252C32;
+}
+
+    input::-moz-placeholder {
+        color: #9AA6AC;
+    }
+
+    input::placeholder {
+        color: #9AA6AC;
+    }
+
+    input:focus {
+        outline: 1px solid #9BCFFD;
+    }
+
+    input[type=text] {
+        width: 260px;
+    }
+
+        input[type=text] ~ span {
+            font-size: larger;
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            transform: translateY(-50%);
+        }
+
+            input[type=text] ~ span i {
+                color: #B0BABF;
+            }
+
+    input[type=date] {
+        width: 180px;
+    }
+
+        input[type=date]::-webkit-calendar-picker-indicator {
+            opacity: 0.35;
+            cursor: pointer;
+        }
+
+    input[type=checkbox] {
+        width: 16px;
+        height: 16px;
+    }
+
+label:has(input[type=checkbox]) {
+    cursor: pointer;
+}
+
+header {
+    z-index: 1000;
+}
+
+    header .nav {
+        justify-content: flex-end;
+        align-items: center;
+        gap: 215px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        height: 65px !important;
+    }
+
+    header .nav-logo {
+        width: 139px;
+        height: 100%;
+    }
+
+    header .nav-menu {
+        align-items: center;
+    }
+
+    header .nav-menu__link a {
+        height: 100%;
+        padding: 23.5px 12px;
+        border-bottom: 1px solid #DDE2E4;
+    }
+
+        header .nav-menu__link a:hover {
+            border-bottom: 1px solid #4094F7;
+        }
+
+    header .nav-user {
+        height: 64px !important;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        margin-left: auto;
+    }
+
+    header .nav-user__name {
+        position: relative;
+        align-items: center;
+        gap: 22px 16px;
+        color: #0E73F6;
+    }
+
+        header .nav-user__name:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px dashed #0E73F6; 
+            top: 20px;
+            opacity: 0.15;
+        }
+
+        header .nav-user__name i {
+            color: #0E73F6;
+        }
+

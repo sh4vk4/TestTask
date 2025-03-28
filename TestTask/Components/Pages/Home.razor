@@ -1,0 +1,131 @@
+﻿@page "/"
+@using TestTask.Services
+@inject TravelRepository TravelRepository
+<PageTitle>Поездки</PageTitle>
+
+<section class="menu flex">
+    <div class="menu-title flex">
+        <p class="font-l">Мои поездки</p>
+        <a class="button font-m flex" href="#">+ Оформить поездку</a>
+    </div>
+    <div class="menu-date flex">
+        <form class="menu-date__inputs flex">
+            <label class="flex font-s" for="from">
+                Период с: <input type="date" data-date-format="dd.mm.yyyy" class="date" placeholder="Выбрать..." id="from" value="2024-02-22">
+            </label>
+            <label class="flex font-s" for="to">
+                по:<input type="text" class="date" placeholder="Выбрать..." onfocus="(this.type='date')" onblur="(this.type='text')" id="from">
+            </label>
+            <label for="search">
+                <input type="text" class="search" name="search" placeholder="Поиск..." id="searchInput" @bind="_search" @bind:event="oninput" /><span>
+                </span>
+            </label>
+            <label class="flex" for="reset">
+                <button @onclick="ResetSearch" name="reset" class="font-xs">Сбросить все</button>
+            </label>
+        </form>
+        <div class="menu-date__check flex">
+            <label class="flex" for="archive">
+                <input type="checkbox" name="archive" id="archive" /><span class="font-xs">Показать архивные поездки</span>
+            </label>
+        </div>
+    </div>
+    <hr />
+</section>
+
+<section class="flights flex">
+@if (_travels == null)
+{
+    <div class="flights-item">
+        <p class="font-s">Загрузка поездок...</p>
+    </div>
+}
+else
+{
+    @if (FilteredTravels.Any())
+    {
+
+            @foreach (var travel in FilteredTravels)
+            {
+                <div class="flights-item flex">
+                    <div class="group flex">
+                        <div class="group-item flex">
+                            <div class="flights-item__name font-xs">№ поездки</div>
+                            <a href="@travel.Code" class="flights-item__info link font-s">@travel.Code</a>
+                        </div>
+                        <div class="group-item flex">
+                            <div class="flights-item__name font-xs">Дата поездки</div>
+                            <div class="flights-item__info font-s">@travel.Period</div>
+                        </div>
+                    </div>
+                    <div class="group flex">
+                        <div class="group-item flex right">
+                            <div class="flights-item__name font-xs">Сумма, план</div>
+                            <div class="flights-item__info font-s">@travel.PlanSum.ToString("# ### ### ### ###.00")</div>
+                        </div>
+                        <div class="group-item flex right">
+                            <div class="flights-item__name font-xs">Сумма, факт</div>
+                            <div class="flights-item__info font-s">@travel.FactSum.ToString("# ### ### ### ###.00")</div>
+                        </div>
+                        <div class="group-item flex">
+                            <div class="flights-item__name font-xs">Город</div>
+                            <div class="flights-item__info">
+                                <div class="flights-item__info flex font-s">
+                                    <p> @travel.Cities </p>
+                                    @if (@travel.Cities.Length >= 50)
+                                        {
+                                            <div class="more">
+                                            <img src="/assets/icons/i.png" alt="Все города"/>
+                                              <span class="popup font-xs">@travel.Cities</span>
+                                            </div>
+                                        }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group flex">
+                        <div class="group-item flex center">
+                            <div class="flights-item__status font-xs">Статус</div>
+                            <div class="flights-item__pill font-xs">@travel.Status</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        
+    }
+    else
+    {  
+        <div class="flights-item">
+                <p class="font-s">Нет поездок, соответствующих критериям поиска.</p>
+        </div>
+    }
+}
+</section>
+
+@code {
+
+    private string _search = "";
+    private List<Travel>? _travels;
+
+    protected override void OnInitialized()
+    {
+        _travels = TravelRepository.GetAllTravels();
+    }
+
+    private List<Travel> FilteredTravels => _travels?
+        .Where(t => string.IsNullOrEmpty(_search) || t.Code.Contains(_search, StringComparison.OrdinalIgnoreCase))
+        .ToList() ?? new List<Travel>();
+
+    private void ResetSearch()
+    {
+        _search = "";
+        StateHasChanged();
+    }
+
+    private string InputValue { get; set; } = string.Empty;
+
+    private void ClearInput()
+    {
+        InputValue = string.Empty;
+    }
+}

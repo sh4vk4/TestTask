@@ -1,0 +1,430 @@
+﻿
+
+.font-xs {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.font-s {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.font-m {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.font-l {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.right {
+    align-items: flex-end;
+}
+
+.center {
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+a.selected {
+    border-bottom: 1px solid #4094F7 !important;
+    cursor: default;
+    font-weight: 600 !important;
+}
+
+.button {
+    justify-content: center;
+    align-items: center;
+    width: 178px;
+    height: 24px;
+    background-color: #4094F7;
+    color: #FFF;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer !important;
+}
+
+hr {
+    height: 2px;
+    position: relative;
+    background-color: #D7EDFF;
+    border: none;
+}
+
+    hr::before {
+        position: absolute;
+        content: "";
+        width: 20%;
+        height: 2px;
+        border: 2px solid #4094F7;
+        z-index: 10;
+    }
+
+.popup {
+    display: none;
+    width: 220px;
+    left: -5px;
+    bottom: 28px;
+    position: absolute;
+    background-color: #303940;
+    color: #F6F8F9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(91, 104, 113, 0.25);
+}
+
+    .popup::before {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: #303940;
+        bottom: -5px;
+        transform: rotate(45deg);
+    }
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(26, 32, 36, 0.2) !important;
+    border-radius: 2px !important;
+}
+
+* {
+    font-family: "Inter", sans-serif !important;
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    color: #252C32;
+}
+
+
+body {
+    background: #FFF;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+label {
+    position: relative;
+}
+
+input {
+    position: relative;
+    height: 32px;
+    background-color: #FFF;
+    border: 1px solid #DDE2E4;
+    border-radius: 6px;
+    padding: 8px;
+    font-family: "Inter", sans-serif !important;
+    color: #252C32;
+}
+
+    input::-moz-placeholder {
+        color: #9AA6AC;
+    }
+
+    input::placeholder {
+        color: #9AA6AC;
+    }
+
+    input:focus {
+        outline: 1px solid #9BCFFD;
+    }
+
+    input[type=text] {
+        width: 260px;
+    }
+
+label:has(input[type=text].date)::before,
+label:has(input[type=date].date)::before {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    content: url('/assets/icons/date.png');
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    z-index: 100;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+        label:has(input[type=text].search)::after {
+            content: url('/assets/icons/search.png');
+            position: absolute;
+            top: 57%;
+            right: 4px;
+            transform: translateY(-50%);
+        }
+
+            input[type=text] ~ span i {
+                color: #B0BABF;
+            }
+
+button {
+    text-align: right;
+    position: relative;
+    border: none;
+    border-radius: 0px;
+    padding: 0px !important;
+    height: 16px;
+    width: 101px;
+    background: none;
+    color: #4094F7;
+    cursor: pointer;
+}
+
+    button:focus {
+        outline: none;
+    }
+
+label:has(button) {
+    justify-content: flex-end;
+    margin-left: 18px;
+    border-bottom: 1px solid rgba(64, 148, 247, .2);
+}
+
+    label:has(button)::before {
+        position: absolute;
+        content: url('/assets/icons/x.png');
+        top: -2px;
+        left: 3px;
+        color: #4094F7;
+    }
+
+input[type=date] {
+    width: 180px;
+}
+
+    input[type=date]::-webkit-calendar-picker-indicator {
+        background: none;
+        content: '';
+        cursor: pointer;
+    }
+
+input[type=date], input[type=text].date {
+    width: 180px;
+}
+
+input[type=checkbox] {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    cursor: pointer;
+}
+
+    input[type=checkbox]:checked {
+        border: 1px solid #4094F7;
+        background-color: #4094F7;
+    }
+
+        input[type=checkbox]:checked::after {
+            position: absolute;
+            content: '✓';
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+label:has(input[type=checkbox]) {
+    cursor: pointer;
+}
+
+main {
+    height: 100%;
+}
+
+    main .menu {
+        flex-direction: column;
+    }
+
+    main .menu-title {
+        height: 56px;
+        z-index: 1;
+        padding: 16px;
+        align-items: center;
+        gap: 24px;
+    }
+
+    main .menu-date {
+        height: 48px;
+        background-color: #F6FCFF;
+        justify-content: space-between;
+        padding: 8px 16px;
+        padding-bottom: 15px;
+    }
+
+    main .menu-date__inputs {
+        gap: 16px;
+        align-items: center;
+    }
+
+    main .menu-date label {
+        position: relative;
+        align-items: center;
+        gap: 8px;
+    }
+
+    main .menu-date a {
+        position: relative;
+    }
+
+        main .menu-date a::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 1px;
+            left: 0;
+            bottom: 0;
+            background-color: #4094F7;
+            opacity: .2;
+        }
+
+        main .menu-date a p, main .menu-date a i {
+            color: #4094F7 !important;
+        }
+
+    main .menu-date :nth-child(3), main .menu-date a {
+        margin-left: 16px;
+    }
+
+        main .menu-date a.flights-item {
+            position: relative;
+            align-items: center;
+            gap: 4px;
+        }
+
+            main .menu-date a.flights-item p, main .menu-date a.flights-item i {
+                color: #4094F7 !important;
+            }
+
+            main .menu-date a.flights-item i {
+                z-index: 10;
+                margin-top: 2px;
+                font-size: larger;
+            }
+
+            main .menu-date a.flights-item::after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 1px;
+                border-bottom: 1px solid #4094F7;
+                top: 26px;
+                opacity: 0.1;
+            }
+
+    main .menu-date__check {
+        align-items: center;
+    }
+
+        main .menu-date__check label {
+            gap: 8px !important;
+        }
+
+    main .flights {
+        background-color: #F6FCFF;
+        padding-right: 8px;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 15px;
+        margin: 8px;
+        overflow-y: scroll;
+        height: 80.25vh;
+    }
+
+    main .flights-item {
+        justify-content: flex-end;
+        gap: 82px;
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #FFF;
+        background-color: #FFF;
+        padding: 16px 24px;
+        transition: 0.1s ease;
+    }
+
+    main .flights-item__name, main .flights-item__status {
+        color: #84919A;
+    }
+
+    main .flights-item__info .more {
+        position: relative;
+    }
+
+    main .flights-item__info.link {
+        position: relative;
+        color: #0E73F6;
+        text-decoration: underline;
+        text-decoration-color: rgba(64, 148, 247, .2);
+        text-underline-offset: 6px;
+    }
+
+    main .flights-item__info p {
+        max-width: 500px !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    main .flights-item__info img {
+        cursor: pointer;
+    }
+
+        main .flights-item__info img:hover ~ .popup {
+            display: block;
+        }
+
+    main .flights-item__pill {
+        padding: 4px 8px;
+        color: #5B6871;
+        background-color: #EEF0F2;
+        border-radius: 10px;
+    }
+
+    main .flights-item:hover {
+        border: 1px solid #9BCFFD;
+    }
+
+        main .flights-item:hover .link {
+            text-decoration: none;
+        }
+
+    main .flights-item .group {
+        gap: 28px;
+    }
+
+    main .flights-item .group-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    main .flights-item .group:nth-child(3) {
+        margin-left: auto;
+    }
+/*# sourceMappingURL=style.css.map */

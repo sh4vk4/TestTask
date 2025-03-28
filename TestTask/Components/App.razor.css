@@ -1,0 +1,177 @@
+main .menu {
+    flex-direction: column;
+}
+
+main .menu-title {
+    z-index: 1;
+    padding: 16px;
+    align-items: center;
+    gap: 24px;
+}
+
+main .menu-date {
+    background-color: #F6FCFF;
+    justify-content: space-between;
+    padding: 8px 16px;
+    padding-bottom: 16px;
+}
+
+main .menu-date__inputs {
+    gap: 16px;
+    align-items: center;
+}
+
+main .menu-date label {
+    position: relative;
+    align-items: center;
+    gap: 12px;
+}
+
+main .menu-date a {
+    position: relative;
+}
+
+    main .menu-date a::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+        background-color: #4094F7;
+        opacity: .2;
+    }
+
+    main .menu-date a p, main .menu-date a i {
+        color: #4094F7 !important;
+    }
+
+main .menu-date :nth-child(3), main .menu-date a {
+    margin-left: 16px;
+}
+
+    main .menu-date a.flights-item {
+        position: relative;
+        align-items: center;
+        gap: 4px;
+    }
+
+        main .menu-date a.flights-item p, main .menu-date a.flights-item i {
+            color: #4094F7 !important;
+        }
+
+        main .menu-date a.flights-item i {
+            z-index: 10;
+            margin-top: 2px;
+            font-size: larger;
+        }
+
+        main .menu-date a.flights-item::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px solid #4094F7;
+            top: 26px;
+            opacity: 0.1;
+        }
+
+main .menu-date__check {
+    align-items: center;
+}
+
+    main .menu-date__check label {
+        gap: 8px !important;
+    }
+
+main .flights {
+    background-color: #F6FCFF;
+    padding-right: 8px;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px !important;
+    margin: 8px;
+    overflow-y: scroll;
+    height: 76vh;
+}
+
+main .flights-item {
+    justify-content: flex-end;
+    gap: 84px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #FFF;
+    background-color: #FFF;
+    padding: 16px 24px;
+    transition: 0.1s ease;
+}
+
+main .flights-item__name, main .flights-item__status {
+    color: #84919A;
+}
+
+main .flights-item__info .more {
+    position: relative;
+}
+
+main .flights-item__info.link {
+    position: relative;
+    color: #0E73F6;
+}
+
+    main .flights-item__info.link:after {
+        position: absolute;
+        content: '';
+        width: 95%;
+        height: 1px;
+        background-color: #4094F7;
+        left: 0;
+        bottom: -3px;
+        opacity: .2;
+    }
+
+main .flights-item__info p {
+    max-width: 500px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+main .flights-item__info i {
+    font-size: 16px;
+    color: #84919A;
+    cursor: pointer;
+}
+
+    main .flights-item__info i:hover ~ .popup {
+        opacity: 1;
+    }
+
+main .flights-item__pill {
+    padding: 4px 8px;
+    color: #5B6871;
+    background-color: #EEF0F2;
+    border-radius: 10px;
+}
+
+main .flights-item:hover {
+    border: 1px solid #9BCFFD;
+}
+
+    main .flights-item:hover .link::after {
+        opacity: 0;
+    }
+
+main .flights-item .group {
+    gap: 28px;
+}
+
+main .flights-item .group-item {
+    flex-direction: column;
+    gap: 8px;
+}
+
+main .flights-item .group:nth-child(3) {
+    margin-left: auto;
+}
+/*# sourceMappingURL=style.css.map */
