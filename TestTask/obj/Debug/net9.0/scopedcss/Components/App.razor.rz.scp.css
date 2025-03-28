@@ -1,0 +1,177 @@
+main .menu[b-ft952khtuv] {
+    flex-direction: column;
+}
+
+main .menu-title[b-ft952khtuv] {
+    z-index: 1;
+    padding: 16px;
+    align-items: center;
+    gap: 24px;
+}
+
+main .menu-date[b-ft952khtuv] {
+    background-color: #F6FCFF;
+    justify-content: space-between;
+    padding: 8px 16px;
+    padding-bottom: 16px;
+}
+
+main .menu-date__inputs[b-ft952khtuv] {
+    gap: 16px;
+    align-items: center;
+}
+
+main .menu-date label[b-ft952khtuv] {
+    position: relative;
+    align-items: center;
+    gap: 12px;
+}
+
+main .menu-date a[b-ft952khtuv] {
+    position: relative;
+}
+
+    main .menu-date a[b-ft952khtuv]::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+        background-color: #4094F7;
+        opacity: .2;
+    }
+
+    main .menu-date a p[b-ft952khtuv], main .menu-date a i[b-ft952khtuv] {
+        color: #4094F7 !important;
+    }
+
+main .menu-date :nth-child(3)[b-ft952khtuv], main .menu-date a[b-ft952khtuv] {
+    margin-left: 16px;
+}
+
+    main .menu-date a.flights-item[b-ft952khtuv] {
+        position: relative;
+        align-items: center;
+        gap: 4px;
+    }
+
+        main .menu-date a.flights-item p[b-ft952khtuv], main .menu-date a.flights-item i[b-ft952khtuv] {
+            color: #4094F7 !important;
+        }
+
+        main .menu-date a.flights-item i[b-ft952khtuv] {
+            z-index: 10;
+            margin-top: 2px;
+            font-size: larger;
+        }
+
+        main .menu-date a.flights-item[b-ft952khtuv]::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px solid #4094F7;
+            top: 26px;
+            opacity: 0.1;
+        }
+
+main .menu-date__check[b-ft952khtuv] {
+    align-items: center;
+}
+
+    main .menu-date__check label[b-ft952khtuv] {
+        gap: 8px !important;
+    }
+
+main .flights[b-ft952khtuv] {
+    background-color: #F6FCFF;
+    padding-right: 8px;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px !important;
+    margin: 8px;
+    overflow-y: scroll;
+    height: 76vh;
+}
+
+main .flights-item[b-ft952khtuv] {
+    justify-content: flex-end;
+    gap: 84px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #FFF;
+    background-color: #FFF;
+    padding: 16px 24px;
+    transition: 0.1s ease;
+}
+
+main .flights-item__name[b-ft952khtuv], main .flights-item__status[b-ft952khtuv] {
+    color: #84919A;
+}
+
+main .flights-item__info .more[b-ft952khtuv] {
+    position: relative;
+}
+
+main .flights-item__info.link[b-ft952khtuv] {
+    position: relative;
+    color: #0E73F6;
+}
+
+    main .flights-item__info.link[b-ft952khtuv]:after {
+        position: absolute;
+        content: '';
+        width: 95%;
+        height: 1px;
+        background-color: #4094F7;
+        left: 0;
+        bottom: -3px;
+        opacity: .2;
+    }
+
+main .flights-item__info p[b-ft952khtuv] {
+    max-width: 500px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+main .flights-item__info i[b-ft952khtuv] {
+    font-size: 16px;
+    color: #84919A;
+    cursor: pointer;
+}
+
+    main .flights-item__info i:hover ~ .popup[b-ft952khtuv] {
+        opacity: 1;
+    }
+
+main .flights-item__pill[b-ft952khtuv] {
+    padding: 4px 8px;
+    color: #5B6871;
+    background-color: #EEF0F2;
+    border-radius: 10px;
+}
+
+main .flights-item:hover[b-ft952khtuv] {
+    border: 1px solid #9BCFFD;
+}
+
+    main .flights-item:hover .link[b-ft952khtuv]::after {
+        opacity: 0;
+    }
+
+main .flights-item .group[b-ft952khtuv] {
+    gap: 28px;
+}
+
+main .flights-item .group-item[b-ft952khtuv] {
+    flex-direction: column;
+    gap: 8px;
+}
+
+main .flights-item .group:nth-child(3)[b-ft952khtuv] {
+    margin-left: auto;
+}
+/*# sourceMappingURL=style.css.map */

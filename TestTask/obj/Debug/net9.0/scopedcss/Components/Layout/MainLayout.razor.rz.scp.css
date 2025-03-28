@@ -1,0 +1,14 @@
+*[b-fcd4apidw2] {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main[b-fcd4apidw2], body[b-fcd4apidw2], html[b-fcd4apidw2] {
+    margin: 0 -8px 0 -8px !important;
+    height: 100%;
+}
+
+header[b-fcd4apidw2] {
+    margin: -8px -8px 0 -8px !important;
+}
